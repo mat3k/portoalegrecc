@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   
   has_many :causes
   validates_presence_of :username
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  #validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_uniqueness_of :username
   validates_uniqueness_of :twitter_user_id, :scope => [:google_email, :facebook_id]
 
