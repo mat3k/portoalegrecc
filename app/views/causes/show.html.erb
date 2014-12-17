@@ -192,7 +192,7 @@
 										</script>
 										<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d889daf1a5fa592"></script>
 										<!-- AddThis Button END --><span class="dotted-line"><!-- --></span>
-										<span class="button button-tags"><span>TAGS</span></span>
+										<span class="button button-tags"><span>TAGI</span></span>
 										<p>
 											<%= @cause.tag_list %>
 										</p>
@@ -207,7 +207,7 @@
 												  });
 												});
 											</script>
-											<a href='#' id='editar' >Editar</a>
+											<a href='#' id='editar' >Edycja</a>
 											<!-- | <a href="#" id="send_to_falapoa" style="font-weight: bold">Enviar ao Fala Porto Alegre</a> -->
 										<% end %>
 									<% end %>
@@ -247,11 +247,11 @@
 									<div class="fb-comments" data-href="<%= request.url %>" data-num-posts="30"></div>
 								</div>
 								<div class="right-tab">
-									<span class="title-bar tit-oferecimento">OFERECIMENTO</span>
+									<span class="title-bar tit-oferecimento">OFERTA</span>
 									<div class="right-tab-item-content mt10 mb10">
 										<a href="http://www.unisinos.br" target="_blank">Unisinos Porto Alegre</a>
 									</div>
-									<span class="title-bar tit-quemapoiaacausa">QUEM APOIA A CAUSA</span>
+									<span class="title-bar tit-quemapoiaacausa">PARTNERZY</span>
 									<div class="right-tab-item-content">
 										<div class="quemapoiaacausa-box">
 											<div>
@@ -277,7 +277,7 @@
 												<span class="w180 dotted-line"><!-- --></span>
 												</div>
 												<% end %>
-												<% if !@cause.same_neighborhood_causes.empty? %> <span class="title-bar tit-maisnestebairro">MAIS NESTE BAIRRO</span>
+												<% if !@cause.same_neighborhood_causes.empty? %> <span class="title-bar tit-maisnestebairro">PODOBNE W OKOLICY</span>
 												<div class="right-tab-item-content">
 												<ul class="link-list">
 												<% @cause.same_neighborhood_causes.each do |cause| %>

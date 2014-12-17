@@ -153,7 +153,7 @@ img {border:none; display:block;}
 	/*crie uma causa*/
 	#left #crieCausa,
 	#left #crieCausa2 {padding:10px 0;border-bottom:1px dotted #7DBB00;}
-	#left #crieCausa a {display:block;width:192px;height:38px;background:url(../img/crie-uma-causa.gif) no-repeat;text-indent:-99999px;}
+	#left #crieCausa a {display:block;width:192px;height:38px;background-color:#7dbd00;}
 	
 	/*selecione por causa*/
 	#left .selectCausas h2 {background-image:url(../img/selecione-por-causas.gif);}
@@ -224,14 +224,15 @@ img {border:none; display:block;}
 
 
 /* */
-#left #crieCausa a {display:block;width:192px;height:38px;background:url('../img/btn-crie-uma-causa.gif') no-repeat;text-indent:-99999px;}
-#left #crieCausa a.clicked {background-position:0 -38px;}
+#left #crieCausa a {display:block;width:192px;height:38px;color: #FFF;text-align: center; line-height: 38px;}
+#left #crieCausa a.clicked {background-color: #FF8A00;}
 
-a.btn-voltarparaomapa {display:block;width:192px;height:38px;background:url('../img/btn_voltarparaomapa.gif') no-repeat;text-indent:-99999px;}
+a.btn-voltarparaomapa {display:block;width:192px;height:38px;background-color: #7DBD00; text-align: center;}
+#crieCausa2 a.btn-voltarparaomapa { font-weight: bold; color: #fff; line-height: 38px; }
 
-
-.btn-registrar {display:block; width:115px; height:38px; float:right; background:url('../img/btn-registrar.gif') no-repeat; text-indent:-99999px;}
-.btn-entrar {display:block; width:115px; height:38px; float:right; background:url('../img/btn-entrar.png') no-repeat; text-indent:-99999px;}
+.btn-registrar {display:block; width:115px; height:38px; float:right; background-color: #7DBD00; text-align: center;}
+.btn-entrar {display:block; width:115px; height:38px; float:right; background-color: #7DBD00; text-align: center;}
+a.btn-entrar, a.btn-registrar { color: #FFF; line-height: 38px; font-weight: bold;}
 #availableUsername {display:block; margin-top:5px; float:left;}
 
 .ts11 {font-size:11px !important;}
@@ -247,15 +248,15 @@ a.btn-voltarparaomapa {display:block;width:192px;height:38px;background:url('../
 
 
 .button {display:block; margin:7px 0; background:url(../img/sprite_buttons.gif) no-repeat;}
-.button span {display:none;}
+.button span {text-align: center; font-weight: bold; line-height: 25px;}
 
 a.button {cursor:pointer;}
 
-.blue-container .button-autor {width:51px; height:25px; background-position:0 0;}
-.blue-container .button-share {width:51px; height:25px; background-position:0 -35px;}
-.blue-container .button-tags {width:41px; height:25px; background-position:0 -70px;}
-.blue-container .button-editar {width:108px; height:37px; background-position:0 -105px;}
-.blue-container .button-comentar {width:133px; height:37px; background-position:0 -152px;}
+.blue-container .button-autor {width:51px; height:25px; background:none; background-color: #00B6DC; color: #FFF;}
+.blue-container .button-share {width:51px; height:25px; background:none; background-color: #00B6DC; color: #FFF;}
+.blue-container .button-tags {width:41px; height:25px; background:none; background-color: #00B6DC; color: #FFF;}
+.blue-container .button-editar {width:108px; height:37px; background:none; background-color: #00B6DC; color: #FFF;}
+.blue-container .button-comentar {width:133px; height:37px; background:none; background-color: #00B6DC; color: #FFF;}
 .blue-container .ttls * {color:#00b4db !important;}
 .blue-container .userinfo {margin-left:60px;}
 .blue-container .userinfo-name {font-size:15px; color:#00b4db !important;}
@@ -306,7 +307,7 @@ a.button {cursor:pointer;}
 
 .dotted-line {margin:10px 0; border-bottom:1px dotted #7DBB00; display:block;}
 
-.title-bar {height:16px; display:block; margin:5px 0; padding:4px 0 0 20px; color:#7dbd00; margin-bottom:1px; background:url('../img/green_titles.png') no-repeat; text-indent:-9999px;}
+.title-bar {height:16px; display:block; margin:5px 0; padding:4px 0 0 20px; color:#7dbd00; margin-bottom:1px; font-size:14px;}
 
 .tit-oferecimento {background-position:0 0;}
 .tit-quemapoiaacausa {background-position:0 -27px;}
