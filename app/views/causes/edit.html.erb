@@ -4,14 +4,14 @@
     <a class="close-button" href="javascript:;" onclick="$.closePopupLayer()">close</a>
     <div class="ctm">
     <div class="mdlPin"><!-- --></div>
-    <h2>Editar causa</h2> 
+    <h2>Edycja miejsca</h2> 
     <div class="ctl"><!-- --></div><div class="ctr"><!-- --></div></div>
     <div class="cml">
         <div class="cmr">
             <div class="cmm">
                 <div class="mdlIn escrever">
-                    <h3>Este é o seu espaço, Colabore!</h3>
-                    <p>Ajude a transformar a nossa cidade. Cadastre e compartilhe suas causas.</p>
+                    <h3>To jest twoja przestrzeń, współpracuj!</h3>
+                    <p>Pomoc przekształcić nasze miasto. Zarejestruj się i podziel się miejscami.</p>
                 
                     <fieldset id="newCauseForm" class="mb15">
                         <input name="id" type="hidden" value="<%= @cause.id %>"/>
@@ -30,12 +30,12 @@
                         <input id="author" name="cell_phone_no" type="text" style="width:300px;" value=""/>
                         -->
                     
-                        <label for="title">Título</label>
+                        <label for="title">Tytuł</label>
                         <input id="title" name="title" type="text" style="width:463px;float:left;" maxlength="80" value="<%= @cause.title %>" />
                         <span class="ctdor"><strong id="titleLimit"><%= 80 - @cause.title.size %></strong></span>
 
                         <div style="clear: both;" />
-                        <label for="title">Imagem, vídeo ou localização no mapa</label>
+                        <label for="title">Zdjęcie, film lub mapa</label>
                         <div id="imgs">
                           <a id="ft" alt="false" title="Inserir fotos" href="javascript:;"><div id="img_foto" /></a>
                           <a id="vd" alt="false" title="Inserir vídeos" href="javascript:;"><div id="img_video" /></a>
@@ -96,7 +96,7 @@
                           </div>
                           <div id="videos_espaco" style="clear: both; margin-bottom:90px" />
                       
-                        <label for="abstract">Descrição</label>
+                        <label for="abstract">Opis</label>
 
                         <!--
                         <textarea id="abstract" name="abstract" style="width:463px;height:110px;float:left;" onkeyup="limitTextArea(this, 525, '#abstractLimit')" onblur="limitTextArea(this, 525, '#abstractLimit')"></textarea>
@@ -107,12 +107,12 @@
                         </div>
 
                         <div class="local">    
-                            <label for="local">Local (CEP ou Rua)</label>
+                            <label for="local">Adres (kod pocztowy, ulica)</label>
                             <input id="local" name="local" type="text" style="width:245px;" value="<%= params[:local] %>" />
                         </div>
                         
                         <div class="categoria">
-              <label>Categoria</label>
+              <label>Kategoria</label>
               
               <a href="javascript:;" class="combo">
                   <span><%= @cause.category.name %></span>                                
@@ -130,19 +130,19 @@
                         </div>
             <span class="break"><!-- --></span>
                         
-                        <label for="tags">Tags</label>
+                        <label for="tags">Tagi</label>
                         <input id="tags" name="tags" type="text" style="width:463px;" class="tc-lightgray" value="<%= @cause.tag_list.empty? ? 'Exemplo: esporte; saúde; exercícios' : @cause.tag_list %>" onfocus="if ($(this).hasClass('tc-lightgray')) { this.value = ''; this.className = '';}" onblur="if (this.value == '') { this.value = 'Exemplo: esporte; saúde; exercícios'; this.className = 'tc-lightgray';}" />
                       <span class="break"><!-- --></span>
                       
                       <div class="mt15">
                           <input id="termos" class="fl" name="termos" type="checkbox" value="yes" checked="checked" />
-                          <label for="termos" class="label-checkbox">Li e concordo com os <a href="javascript:;" onclick="openModal('termos_de_uso');">Termos de Uso</a></label>
+                          <label for="termos" class="label-checkbox">Przeczytałem i akceptuje <a href="javascript:;" onclick="openModal('termos_de_uso');">regulamin.</a></label>
                       </div>
                       <span class="break"><!-- --></span>
                     </fieldset>
                 
                     <div class="boxBottom">
-                        <a href="javascript:;" class="btn fl postar">POSTAR</a>
+                        <a href="javascript:;" class="btn fl postar">Edytuj</a>
                     </div>
                 </div>
             </div>
