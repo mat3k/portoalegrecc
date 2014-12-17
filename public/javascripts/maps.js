@@ -90,8 +90,8 @@ var Map = Class.extend({
     	}	
 	},
 	createMap: function() {
-		var startLat = $.cookie("map.lat") != null ? $.cookie("map.lat") : -30.06018867580871;
-		var startLng = $.cookie("map.lng") != null ? $.cookie("map.lng") : -51.2034991693115;
+		var startLat = $.cookie("map.lat") != null ? $.cookie("map.lat") : 50.060;
+		var startLng = $.cookie("map.lng") != null ? $.cookie("map.lng") : 19.959;
 		var startZoom = $.cookie("map.zoom") != null ? $.cookie("map.zoom") : 13;
 		startZoom = parseInt(startZoom);
 		
@@ -239,6 +239,7 @@ var Map = Class.extend({
 				}
 				
 				_this.createCauseButton.removeClass('clicked');
+				_this.createCauseButton.text("DODAJ MIEJSCE");
 				$.cookie('waitingToAddMarker', null);
 				
  				var local = '';
@@ -248,7 +249,7 @@ var Map = Class.extend({
 					if (status == google.maps.GeocoderStatus.OK) {
 						if (results.length > 0) {
 							var local = results[0].formatted_address;
-							var district, city, state;
+							var district = null, city, state;
 
 							for (var i = 0; i < results[0].address_components.length; i++) {
 								if (results[0].address_components[i].types[0] == 'sublocality') {
@@ -261,7 +262,8 @@ var Map = Class.extend({
 							}
 						}
  					}
-					if (city == 'Porto Alegre' && state == 'RS') {		
+					// if (city == 'Porto Alegre' && state == 'RS') {
+					if (true) {
 						$.openPopupLayer({
 					        name: 'mdlEscrever',
 					        width: 710,
@@ -340,8 +342,8 @@ var Map = Class.extend({
 						$.cookie("map.lng", _this.portoalegreLocation.lng());
 					}
 					
-					var position = new google.maps.LatLng($.cookie("map.lat"), $.cookie("map.lng"));
-					_this.map.panTo(position);
+					// var position = new google.maps.LatLng($.cookie("map.lat"), $.cookie("map.lng"));
+					// _this.map.panTo(position);
 				}
 			});
 		});
@@ -368,6 +370,7 @@ var Map = Class.extend({
 	
 	addCause: function() {
 		this.createCauseButton.addClass('clicked');
+		this.createCauseButton.text("WYBIERZ LOKALIZACJE");
 	},
 	
 	createMarker: function(data) {
@@ -500,7 +503,7 @@ var SmallMap = Map.extend({
 			streetViewControl: false,
 			navigationControl: false,
 			scaleControl: false,
-			draggable: false
+			draggable: true
 		});
 
 		var styledMapOptions = {
