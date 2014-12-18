@@ -67,6 +67,7 @@ class CausesController < ApplicationController
     @cause.longitude = params['lng']
     @cause.district = params['district']
     @cause.category_id = 1
+    @cause.city = params['city']
     
     @cause.save
     respond_to do |format|

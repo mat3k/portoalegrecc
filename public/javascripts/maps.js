@@ -371,7 +371,8 @@ var Map = Class.extend({
 								lat: ev.latLng.lat(),
 								lng: ev.latLng.lng(),
 								local: local,
-								district: district
+								district: district,
+								city: city
 							},
 							success: function() {
 								$('#newCauseForm input[name=title]').focus();
