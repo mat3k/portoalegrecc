@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504135239) do
+ActiveRecord::Schema.define(:version => 20141218160444) do
+
+  create_table "budgets", :force => true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.date     "from"
+    t.date     "to"
+    t.integer  "participants_count"
+    t.integer  "value",              :limit => 10, :precision => 10, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -39,6 +50,8 @@ ActiveRecord::Schema.define(:version => 20120504135239) do
     t.integer  "likes",                                             :default => 0
     t.datetime "last_likes_update"
     t.string   "protocol",                                          :default => "-1"
+    t.string   "city"
+    t.integer  "budget_id"
   end
 
   create_table "rich_contents", :force => true do |t|

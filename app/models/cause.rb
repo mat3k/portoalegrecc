@@ -8,6 +8,7 @@ class Cause < ActiveRecord::Base
   
   belongs_to :category
   belongs_to :user
+  belongs_to :budget
   after_save :clean_images
   
   validates_presence_of :author
@@ -17,6 +18,21 @@ class Cause < ActiveRecord::Base
   validates_presence_of :longitude
   validates_presence_of :district
   validates_presence_of :abstract
+
+  named_scope :by_city, lambda {|city| {:conditions => {:city => city}, :order => "updated_at DESC" } }
+  named_scope :by_budget, lambda {|name| {:joins => :budget, :conditions => ["budget.name = ?", name], :order => "updated_at DESC" } }
+
+  def accepted?
+    !self.is_rejected
+  end
+
+  def rejected?
+    self.is_rejected
+  end
+
+  def undecided?
+    self.is_rejected.nil?
+  end
 
   def self.search(text, category)
     text = "%#{text}%"
