@@ -16,12 +16,6 @@ config/deploy.rb
 # Filesystem settings for AWS S3.
 config/s3.yml
 
-# Settings for environments.
-config/environments/development.rb
-config/environments/production.rb
-config/environments/staging.rb
-config/environments/test.rb
-
 # Configuration of smtp mail service.
 config/initializers/mail.rb
 # Configuration of social integration.
