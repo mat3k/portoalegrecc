@@ -1,6 +1,6 @@
 <h2>Użytkownicy (<%=h @users.total_entries %>)</h2>
 <h3>Facebook (<%=h @facebook_users.first.users %>) | Twitter(<%=h @twitter_users.first.users %>) | Google (<%=h @gmail_users.first.users %>)</h3>
-<% unless @users2.empty? %><span class="break"><a href= "/reports/users.csv">(Exportar para excel)</a></span><% end %>				
+<% unless @users2.empty? %><span class="break"><a href= "/reports/users.csv">(Eksport do Excela)</a></span><% end %>				
 				
 <div align="right">
   <%= will_paginate @users, :previous_label => "&laquo; Poprzednia", :next_label => "Następna &raquo;" %>
@@ -8,8 +8,8 @@
 <table class="table-list" id="table-users">
 	<tr>
 		<th style="width:50px;"> </th>
-		<th style="width:100px;"><%= user_sortable 'username', "Nazwa" %></th>
-		<th style="width:100px;"><%= user_sortable 'name', "Login" %></th>						
+		<th style="width:100px;"><%= user_sortable 'username', "Login" %></th>
+		<th style="width:100px;"><%= user_sortable 'name', "Nazwa" %></th>						
 		<th style="width:100px;"><%= user_sortable 'last_sign_in', "Data logowania" %></th>															
 		<th style="width:100px;"><%= user_sortable 'location', "Miejscowość" %></th>
 		<th style="width:100px;"><%= user_sortable 'twitter_user_id', "Twitter" %></th>						
