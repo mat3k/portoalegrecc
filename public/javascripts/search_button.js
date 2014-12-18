@@ -4,9 +4,9 @@ jQuery(document).ready(function(){
     var input = $('input#s');
     var divInput = $('div.input');
     var width = divInput.width();
-    var outerWidth = 230;
+    var outerWidth = 260;
     var txt = input.val();
-    var originalWidth = 250;
+    var originalWidth = 280;
     
     $('#search_icon').bind('click', function(){
         if ($("#comboDistricts").css("visibility") != "hidden") {
@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
             input.focus();
         });
         $("#new_top #busca").animate({
-            width: '250px'
+            width: '280px'
         }, 300);
         
     });

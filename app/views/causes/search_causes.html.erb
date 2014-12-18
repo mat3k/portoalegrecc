@@ -59,7 +59,7 @@
 							}
 						}					
 						if (!encontrou){
-							jQuery("#locais").prepend("Nenhum endereço encontrado<br>");
+							jQuery("#locais").prepend("Nie znaleziono adresu<br>");
 						}
 					}
 					
@@ -100,32 +100,32 @@
     <a class="close-button" href="javascript:;" onclick="$.closePopupLayer()">close</a>
   <div class="ctm">
   <div class="mdlPin"><!-- --></div>
-  <h2>Busca</h2>
+  <h2>Wyszukiwarka</h2>
   <div class="ctl"><!-- --></div><div class="ctr"><!-- --></div></div>
   <div class="cml">
     <div class="cmr">
       <div class="cmm">
         <div class="mdlIn">
-          <h3>Resultados encontrados para: <span style='color: #7a7a7a'>"<%= params[:search]%>"</span></h3>
+          <h3>Wyniki znalezione dla: <span style='color: #7a7a7a'>"<%= params[:search]%>"</span></h3>
           <span id='entries'>
           <% if @causes.empty? %>
-           Nenhum resultado foi encontrado.
+           Nie znaleziono wyników.
           <% elsif @causes.length == 1 %>
-           Foi encontrado 1 item com o termo usado.
+           Znaleziono 1 projekt.
           <% else %>
 		  	<span id='n_entries'>
-           Foram encontrados <%=h @causes.total_entries %> itens com o termo usado.<br />
+           Znaleziono <%=h @causes.total_entries %> projektów.<br />
 		   </span>
 		   <%= render :partial => 'select_box' %>
           <% end %>
           </span>
           <span class="dotted-line" id="first-dotted-line"></span>
-          <div class='green-title'>Ruas</div>
+          <div class='green-title'>Ulice</div>
 		  <div id="locais"></div>
 		  <br>
 		  <% unless @causes.empty? %>
 		  <span class="dotted-line"></span>
-		  <div class='green-title'>Causas</div>
+		  <div class='green-title'>Projekty</div>
           <div id='causes'>
 			<%= render :partial => 'pagination' %>
           </div>
