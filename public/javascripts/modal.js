@@ -8,11 +8,6 @@ $(function(){
 	
 	bindEvents();
 	onScroll();
-	getTweets();
-	
-	timerTwitter = setInterval(function() {
-		getTweets();
-	}, 60000);
 	
 	$('#maps').bind('click', function() {
 		$('#comboDistricts').addClass('hidden');
