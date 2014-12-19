@@ -13,17 +13,17 @@ class AdminController < ApplicationController
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:message] = "Login efetuado com sucesso"
+      flash[:message] = "Zostałeś zalogowany."
       redirect_to :action => :show_causes
     else
-      flash[:message] = "Usuário ou senha incorretos"
+      flash[:message] = "Nie znaleziono użytkownika."
       redirect_to :action => :index
     end
   end
   
   def logout
     session[:user_id] = nil
-    flash[:message] = "Saiu com sucesso"
+    flash[:message] = "Zostałeś wylogowany."
     redirect_to :action => :index
   end
   
