@@ -6,6 +6,7 @@ tmp/**/*
 .bundle/*
 vendor/bundle/*
 bin/*
+vendor/cache/*
 
 ## Sensivite data
 
