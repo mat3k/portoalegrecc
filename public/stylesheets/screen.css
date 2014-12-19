@@ -174,7 +174,7 @@ img {border:none; display:block;}
 
 	/*redes sociais*/
 	#left .redesSociais h2 {background-image:url(../img/redes-sociais.gif);}
-	#left #redesSociais {height:46px; margin:15px 0 0 -13px; padding-left:13px; background-image:url('../img/bgr_shadow_top_socialmedias.png'); background-position:left bottom; background-repeat:no-repeat;}
+	#left #redesSociais {height:10px; margin:15px 0 0 -13px; padding-left:13px; background-image:url('../img/bgr_shadow_top_socialmedias.png'); background-position:left bottom; background-repeat:no-repeat;}
 	#left #redesSociais li {height:46px; margin-right:5px; float:left;}
 	#left #redesSociais li a {width:30px; height:32px; opacity:0.20; filter:alpha(opacity=20); background-image:url('../img/spr_socialmedias.gif'); background-repeat:no-repeat; display:block; text-indent:-99999px;}
 	#left #redesSociais li.selected {background-image:url('../img/arrow_socialmedia.png'); background-position:center bottom; background-repeat:no-repeat;}
@@ -323,3 +323,5 @@ a.button {cursor:pointer;}
 /*.scroll-pane {-webkit-transform-style:preserve-3d;}*/
 .jspVerticalBar {width:6px !important; background:none !important;}
 .jspTrack {background:none !important;}
+
+ #left .content #crieCausa.fake-last {border-bottom:none;}
