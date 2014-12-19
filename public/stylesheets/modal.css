@@ -282,6 +282,16 @@ div#post_image{
 #mdlEscrever .categoria .comboLst li a:hover {color:#7DBD00;}
 #mdlEscrever .categoria .on {display:block;}
 
+#mdlEscrever .budget {float:left;margin:0 0 0 20px;}
+#mdlEscrever .budget label {color:#415157;}
+#mdlEscrever .budget .combo {display:block;background:url(../img/bg-combo.gif) no-repeat;color:#FFF;width:185px;height:24px;padding:6px 0 0 15px;text-decoration:none;}
+#mdlEscrever .budget .combo span {display:block;width:145px;font-size:15px;font-weight:bold;overflow:hidden;white-space:nowrap;}
+#mdlEscrever .budget .comboLst {background:#415157;width:184px;padding:5px 0 5px 15px;margin:1px 0 0 0;position:absolute;z-index:10;}
+#mdlEscrever .budget .comboLst li {margin:0 0 5px 0;}
+#mdlEscrever .budget .comboLst li a {display:block;color:#FFF;font-size:15px;font-weight:bold;text-decoration:none;}
+#mdlEscrever .budget .comboLst li a:hover {color:#7DBD00;}
+#mdlEscrever .budget .on {display:block;}
+
 .label-checkbox {margin:0 0 0 5px !important; float:left; font-size:12px !important; color:#666 !important;}
 
 /*mdlLogin*/

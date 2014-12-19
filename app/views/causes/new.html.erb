@@ -111,9 +111,28 @@
                         </div>
                         </div>
             <span class="break"><!-- --></span>
+                        <div class="local">    
                         
                         <label for="tags">Tagi</label>
-                        <input id="tags" name="tags" type="text" style="width:463px;" class="tc-lightgray" value="Przykład: sport; zdrowie; biznes" onfocus="if ($(this).hasClass('tc-lightgray')) { this.value = ''; this.className = '';}" onblur="if (this.value == '') { this.value = 'Przykład: sport; zdrowie; biznes'; this.className = 'tc-lightgray';}" />
+                        <input id="tags" name="tags" type="text" style="width:245px;" class="tc-lightgray" value="Przykład: sport; zdrowie; biznes" onfocus="if ($(this).hasClass('tc-lightgray')) { this.value = ''; this.className = '';}" onblur="if (this.value == '') { this.value = 'Przykład: sport; zdrowie; biznes'; this.className = 'tc-lightgray';}" />
+                      </div>
+                        <div class="budget">
+              <label>Budżet</label>
+              
+              <a href="javascript:;" class="combo">
+                  <span><%= @budgets.first.name %></span>                                
+              </a>
+              
+                            <div class="combo-content hidden">
+                      <div class="scroll-pane">
+                                <ul class="comboLst">
+                                <% @budgets.each do |budget| %>
+                                    <li><a id="budget_<%= budget.id %>" class="<%= budget.id == @budgets.first.id ? 'selected' : '' %>" href="javascript:;"> <%= budget.name %></a></li>
+                                <% end %>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
                       <span class="break"><!-- --></span>
                       
                       <div class="mt15">
@@ -184,6 +203,7 @@
     	
     if (!error) {
     	var data = {
+        budget_id: $('#newCauseForm .budget a.selected').attr('id').replace('budget_', ''),
         id: $('#newCauseForm input[name=id]').val(),
     		author: $('#newCauseForm input[name=author]').val(),
   			email: $('#newCauseForm input[name=email]').val(),
@@ -231,6 +251,25 @@
   });
 
   $('.categoria label').bind('click', function() {
+    $(this).parent().find('.combo-content').removeClass('hidden');
+  });
+
+  $('.budget .combo-content a').each(function(i) {
+    $(this).bind('click', function() {
+      var value = $(this).text();
+      var parent = $(this).parents('.combo-content').parent();
+      parent.find('span').html(value);
+      parent.find('.combo-content').addClass('hidden');
+      parent.find('.combo-content a').attr('class', '');
+      $(this).addClass('selected');
+    });
+  });
+  
+  $('.budget .combo').bind('click', function() {
+    $(this).parent().find('.combo-content').toggleClass('hidden');
+  });
+
+  $('.budget label').bind('click', function() {
     $(this).parent().find('.combo-content').removeClass('hidden');
   });
 

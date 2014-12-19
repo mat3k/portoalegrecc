@@ -28,6 +28,10 @@ gem "json",               "1.6.3"
 gem "htmlentities", 			"4.3.1"
 gem "whenever",           :require => false
 
+group :development do
+  gem 'pry', "0.9.12"
+end
+
 source :gemcutter
 gem "acts-as-taggable-on", "2.0.0.rc1"
 

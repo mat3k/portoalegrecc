@@ -30,6 +30,14 @@ ActionController::Routing::Routes.draw do |map|
   map.manage_image_cause '/causes/manage_image', :controller => 'causes', :action => 'manage_image_cause'
   map.add_url_image '/causes/add_url_image', :controller => 'causes', :action => 'add_url_image'
 
+
+  # budget
+  map.new_budget '/budgets/new', :controller => 'budgets', :action => 'new'
+  map.create_budget '/budgets/create', :controller => 'budgets', :action => 'create'
+  map.edit_budget '/budgets/edit/:id', :controller => 'budgets', :action => 'edit'
+  map.update_budget '/budgets/update/:id', :controller => 'budgets', :action => 'update'
+
+
   # map.resources 'cause'
   
   map.sobre_o_projeto '/sobre_o_projeto', :controller => 'application', :action => 'sobre_o_projeto'

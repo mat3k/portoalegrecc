@@ -39,6 +39,7 @@ var Map = Class.extend({
 		this.createMap();
 		this.overMarker = new OverMarker(this.portoalegreLocation, {}, this, false);
 		this.createCauseButton = $('#createCauseButton');
+		this.createBudgetButton = $('#createBudgetButton');
 		this.loginButton = $('#loginButton');
 		this.createZoom();
 		this.bindEvents();
@@ -466,6 +467,10 @@ var Map = Class.extend({
 			
 			_this.addCause();
 		});
+
+		this.createBudgetButton.bind('click', function() {
+			createBudget();
+		});
 	},
 	
 	addCause: function() {
@@ -798,6 +803,28 @@ var openModal = function(name) {
         url: "/"+name
 	});
 }
+
+var createBudget = function(){
+	$.openPopupLayer({
+        name: 'mdlBudget',
+        width: 710,
+        url: 'budgets/new',
+		// parameters: {
+		// 	lat: ev.latLng.lat(),
+		// 	lng: ev.latLng.lng(),
+		// 	local: local,
+		// 	district: district
+		// },
+		success: function() {
+			$('#newCauseForm input[name=name]').focus();
+			$("#left").height("1500px");
+			$("#inner").height("1500px");
+			// google.maps.event.trigger(_this.map, 'resize');
+			$(window).resize();
+		}
+	});
+}
+
 
 $(document).ready(function() {
 	adjustInnerSize();

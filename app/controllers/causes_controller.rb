@@ -54,6 +54,7 @@ class CausesController < ApplicationController
   
   def new
     @categories = Category.find(:all, :order => 'name ASC')
+    @budgets = Budget.find(:all, :order => 'name ASC')
     @user = session[:user]
     @cause = Cause.new
     
@@ -78,6 +79,7 @@ class CausesController < ApplicationController
   def create
     @cause = Cause.find params[:id]
     @cause.update_attributes(
+        :budget_id => params[:budget_id],
         :local => params[:local], 
         :phone_no => params[:phone_no],
         :cell_phone_no => params[:cell_phone_no],
@@ -180,7 +182,8 @@ class CausesController < ApplicationController
   end
   
   def update
-    @cause = Cause.find(params[:id])    
+    @cause = Cause.find(params[:id]) 
+    @cause.budget_id = params[:budget_id]   
     @cause.local = params[:local]
     @cause.email = params[:email]
     @cause.phone_no = params[:phone_no]

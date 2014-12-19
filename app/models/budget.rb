@@ -1,3 +1,3 @@
 class Budget < ActiveRecord::Base
-	have_many :causes
+	has_many :causes
 end
